@@ -1,17 +1,21 @@
-name: Endpoints
-description: ''
+name: Zones
+description: |-
+
+  Managing Zones
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/user
+    uri: api/v1/zones
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: Zones
+      groupDescription: |-
+
+        Managing Zones
       subgroup: ''
       subgroupDescription: ''
-      title: ''
-      description: ''
+      title: 'Get Zones'
+      description: 'List all the zones'
       authenticated: false
       custom: []
     headers:
@@ -43,18 +47,20 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/auth/register
+    uri: api/v1/zones
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: Zones
+      groupDescription: |-
+
+        Managing Zones
       subgroup: ''
       subgroupDescription: ''
-      title: ''
-      description: ''
+      title: 'Create Zone'
+      description: 'Create a zone'
       authenticated: false
       custom: []
     headers:
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -65,84 +71,34 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: uek
+        example: eqddksajchthntpimnm
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+      price_per_hour:
+        name: price_per_hour
+        description: 'Must not be greater than 1000.'
         required: true
-        example: vyost@example.net
-        type: string
+        example: 21
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      password:
-        name: password
-        description: ''
-        required: true
-        example: aliquam
-        type: string
+      image:
+        name: image
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: false
+        example: null
+        type: file
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: uek
-      email: vyost@example.net
-      password: aliquam
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/auth/login
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: kyle11@example.net
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
-        description: ''
-        required: true
-        example: aliquid
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      email: kyle11@example.net
-      password: aliquid
-    fileParameters: []
+      name: eqddksajchthntpimnm
+      price_per_hour: 21
+    fileParameters:
+      image: null
     responses: []
     responseFields: []
     auth: []
@@ -153,21 +109,33 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/profile
+    uri: 'api/v1/zones/{id}'
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: Zones
+      groupDescription: |-
+
+        Managing Zones
       subgroup: ''
       subgroupDescription: ''
-      title: ''
-      description: ''
+      title: 'Show Zone'
+      description: 'show a zone'
       authenticated: false
       custom: []
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the zone.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -183,56 +151,6 @@ endpoints:
           vary: Origin
         description: null
         custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PATCH
-    uri: api/v1/profile
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: zivnapjhcldnvhufznrkcj
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address. Must not be greater than 255 characters.'
-        required: true
-        example: shea41@example.net
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      name: zivnapjhcldnvhufznrkcj
-      email: shea41@example.net
-    fileParameters: []
-    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -242,173 +160,17 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: api/v1/password
+      - PATCH
+    uri: 'api/v1/zones/{id}'
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: Zones
+      groupDescription: |-
+
+        Managing Zones
       subgroup: ''
       subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      current_password:
-        name: current_password
-        description: ''
-        required: true
-        example: temporibus
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
-        description: ''
-        required: true
-        example: aut
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      current_password: temporibus
-      password: aut
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/auth/logout
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/vehicles
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/vehicles
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      plate_number:
-        name: plate_number
-        description: ''
-        required: true
-        example: aliquam
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      plate_number: aliquam
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/vehicles/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
+      title: 'Update Zone'
+      description: 'update a zone'
       authenticated: false
       custom: []
     headers:
@@ -417,79 +179,39 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the vehicle.'
+        description: 'The ID of the zone.'
         required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: xfcbxirrrxnzqvlbhj
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      price_per_hour:
+        name: price_per_hour
+        description: 'Must not be greater than 1000.'
+        required: false
         example: 15
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanUrlParameters:
-      id: 15
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/v1/vehicles/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the vehicle.'
-        required: true
-        example: 14
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      id: 14
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      plate_number:
-        name: plate_number
-        description: ''
-        required: true
-        example: velit
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
     cleanBodyParameters:
-      plate_number: velit
+      name: xfcbxirrrxnzqvlbhj
+      price_per_hour: 15
     fileParameters: []
     responses: []
     responseFields: []
@@ -501,14 +223,16 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/vehicles/{id}'
+    uri: 'api/v1/zones/{id}'
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: Zones
+      groupDescription: |-
+
+        Managing Zones
       subgroup: ''
       subgroupDescription: ''
-      title: ''
-      description: ''
+      title: 'Delete Zone'
+      description: 'delete a zone'
       authenticated: false
       custom: []
     headers:
@@ -517,201 +241,21 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the vehicle.'
+        description: 'The ID of the zone.'
         required: true
-        example: 15
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 15
+      id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/parkings/start
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      vehicle_id:
-        name: vehicle_id
-        description: ''
-        required: true
-        example: 15
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      zone_id:
-        name: zone_id
-        description: ''
-        required: true
-        example: 20
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      vehicle_id: 15
-      zone_id: 20
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/parkings/{parking_id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      parking_id:
-        name: parking_id
-        description: 'The ID of the parking.'
-        required: true
-        example: 10
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      parking_id: 10
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/parkings/{parking_id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      parking_id:
-        name: parking_id
-        description: 'The ID of the parking.'
-        required: true
-        example: 8
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      parking_id: 8
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/zones
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"id":1,"name":"Green Zone","price_per_hour":100},{"id":2,"name":"Yellow Zone","price_per_hour":200},{"id":3,"name":"Red Zone","price_per_hour":300}]}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
-          vary: Origin
-        description: null
-        custom: []
     responseFields: []
     auth: []
     controller: null

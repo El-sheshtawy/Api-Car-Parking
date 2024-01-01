@@ -1,14 +1,14 @@
 <?php
 
-use App\Http\Controllers\Api\V1\Auth\LoginController;
-use App\Http\Controllers\Api\V1\Auth\LogoutController;
-use App\Http\Controllers\Api\V1\Auth\PasswordUpdateController;
-use App\Http\Controllers\Api\V1\Auth\ProfileController;
-use App\Http\Controllers\Api\V1\Auth\RegisterController;
-use App\Http\Controllers\Api\V1\ParkingController;
-use App\Http\Controllers\Api\V1\UserController;
-use App\Http\Controllers\Api\V1\VehicleController;
-use App\Http\Controllers\Api\V1\ZoneController;
+use App\Http\Controllers\Api\V2\Auth\LoginController;
+use App\Http\Controllers\Api\V2\Auth\LogoutController;
+use App\Http\Controllers\Api\V2\Auth\PasswordUpdateController;
+use App\Http\Controllers\Api\V2\Auth\ProfileController;
+use App\Http\Controllers\Api\V2\Auth\RegisterController;
+use App\Http\Controllers\Api\V2\ParkingController;
+use App\Http\Controllers\Api\V2\UserController;
+use App\Http\Controllers\Api\V2\VehicleController;
+use App\Http\Controllers\Api\V2\ZoneController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,10 +22,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('/zones', ZoneController::class)->middleware('auth:sanctum');
+Route::apiResource('/zones', ZoneController::class);
 
 Route::middleware('guest')->prefix('auth')->group(function () {
-
     Route::post('/register', RegisterController::class);
     Route::post('/login', LoginController::class);
 });

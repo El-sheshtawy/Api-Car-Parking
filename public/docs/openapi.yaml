@@ -7,37 +7,15 @@ servers:
   -
     url: 'http://localhost'
 paths:
-  /api/v1/user:
-    get:
-      summary: ''
-      operationId: getApiV1User
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
   /api/v1/auth/register:
     post:
-      summary: ''
-      operationId: postApiV1AuthRegister
-      description: ''
+      summary: Register
+      operationId: register
+      description: 'User registration'
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
+        - Authentication
       requestBody:
         required: true
         content:
@@ -48,15 +26,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: uek
+                  example: cufwydldpymzmjec
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: vyost@example.net
+                  example: aliza47@example.net
                 password:
                   type: string
                   description: ''
-                  example: aliquam
+                  example: nostrum
               required:
                 - name
                 - email
@@ -64,13 +42,13 @@ paths:
       security: []
   /api/v1/auth/login:
     post:
-      summary: ''
-      operationId: postApiV1AuthLogin
-      description: ''
+      summary: Login
+      operationId: login
+      description: 'User logging in'
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
+        - Authentication
       requestBody:
         required: true
         content:
@@ -81,107 +59,30 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: kyle11@example.net
+                  example: qbins@example.org
                 password:
                   type: string
                   description: ''
-                  example: aliquid
+                  example: non
               required:
                 - email
-                - password
-      security: []
-  /api/v1/profile:
-    get:
-      summary: ''
-      operationId: getApiV1Profile
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-    patch:
-      summary: ''
-      operationId: patchApiV1Profile
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: zivnapjhcldnvhufznrkcj
-                email:
-                  type: string
-                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: shea41@example.net
-              required:
-                - name
-                - email
-      security: []
-  /api/v1/password:
-    put:
-      summary: ''
-      operationId: putApiV1Password
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                current_password:
-                  type: string
-                  description: ''
-                  example: temporibus
-                password:
-                  type: string
-                  description: ''
-                  example: aut
-              required:
-                - current_password
                 - password
       security: []
   /api/v1/auth/logout:
     post:
-      summary: ''
-      operationId: postApiV1AuthLogout
-      description: ''
+      summary: Logout
+      operationId: logout
+      description: 'User logging out'
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
+        - Authentication
       security: []
-  /api/v1/vehicles:
+  /api/v1/user:
     get:
-      summary: ''
-      operationId: getApiV1Vehicles
-      description: ''
+      summary: 'Get User'
+      operationId: getUser
+      description: 'get a user'
       parameters: []
       responses:
         401:
@@ -199,99 +100,15 @@ paths:
       tags:
         - Endpoints
       security: []
-    post:
-      summary: ''
-      operationId: postApiV1Vehicles
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                plate_number:
-                  type: string
-                  description: ''
-                  example: aliquam
-              required:
-                - plate_number
-      security: []
-  '/api/v1/vehicles/{id}':
-    get:
-      summary: ''
-      operationId: getApiV1VehiclesId
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-    put:
-      summary: ''
-      operationId: putApiV1VehiclesId
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                plate_number:
-                  type: string
-                  description: ''
-                  example: velit
-              required:
-                - plate_number
-      security: []
-    delete:
-      summary: ''
-      operationId: deleteApiV1VehiclesId
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the vehicle.'
-        example: 15
-        required: true
-        schema:
-          type: integer
   /api/v1/parkings/start:
     post:
-      summary: ''
-      operationId: postApiV1ParkingsStart
-      description: ''
+      summary: 'Start parking'
+      operationId: startParking
+      description: 'start the parking'
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
+        - Parking
       requestBody:
         required: true
         content:
@@ -313,9 +130,9 @@ paths:
       security: []
   '/api/v1/parkings/{parking_id}':
     get:
-      summary: ''
-      operationId: getApiV1ParkingsParking_id
-      description: ''
+      summary: 'Show parking'
+      operationId: showParking
+      description: 'show the parking details'
       parameters: []
       responses:
         401:
@@ -331,88 +148,345 @@ paths:
                     type: string
                     example: Unauthenticated.
       tags:
-        - Endpoints
+        - Parking
       security: []
     put:
-      summary: ''
-      operationId: putApiV1ParkingsParking_id
-      description: ''
+      summary: 'Stop parking'
+      operationId: stopParking
+      description: 'stop the parking'
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
+        - Parking
       security: []
     parameters:
       -
         in: path
         name: parking_id
         description: 'The ID of the parking.'
-        example: 10
+        example: 5
         required: true
         schema:
           type: integer
-  /api/v1/zones:
+  /api/v1/profile:
     get:
-      summary: ''
-      operationId: getApiV1Zones
-      description: ''
+      summary: 'Show User Profile'
+      operationId: showUserProfile
+      description: 'show the user profile information'
       parameters: []
       responses:
-        200:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  data:
-                    -
-                      id: 1
-                      name: 'Green Zone'
-                      price_per_hour: 100
-                    -
-                      id: 2
-                      name: 'Yellow Zone'
-                      price_per_hour: 200
-                    -
-                      id: 3
-                      name: 'Red Zone'
-                      price_per_hour: 300
+                  message: Unauthenticated.
                 properties:
-                  data:
-                    type: array
-                    example:
-                      -
-                        id: 1
-                        name: 'Green Zone'
-                        price_per_hour: 100
-                      -
-                        id: 2
-                        name: 'Yellow Zone'
-                        price_per_hour: 200
-                      -
-                        id: 3
-                        name: 'Red Zone'
-                        price_per_hour: 300
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                          example: 1
-                        name:
-                          type: string
-                          example: 'Green Zone'
-                        price_per_hour:
-                          type: integer
-                          example: 100
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
-        - Endpoints
+        - 'User Profile'
       security: []
+    patch:
+      summary: 'Update User Profile'
+      operationId: updateUserProfile
+      description: 'update the user profile information'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'User Profile'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: wadkdopvhcz
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: verla79@example.org
+              required:
+                - name
+                - email
+      security: []
+  /api/v1/password:
+    put:
+      summary: 'Update password'
+      operationId: updatePassword
+      description: 'update the user password'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'User Profile'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  type: string
+                  description: ''
+                  example: voluptatem
+                password:
+                  type: string
+                  description: ''
+                  example: eum
+              required:
+                - current_password
+                - password
+      security: []
+  /api/v1/vehicles:
+    get:
+      summary: 'Get Vehicles'
+      operationId: getVehicles
+      description: 'List all the vehicles'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Vehicles
+      security: []
+    post:
+      summary: 'Create Vehicle'
+      operationId: createVehicle
+      description: 'Create a vehicle'
+      parameters: []
+      responses: {  }
+      tags:
+        - Vehicles
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                plate_number:
+                  type: string
+                  description: ''
+                  example: facilis
+              required:
+                - plate_number
+      security: []
+  '/api/v1/vehicles/{id}':
+    get:
+      summary: 'Show Vehicle'
+      operationId: showVehicle
+      description: 'show a vehicle'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Vehicles
+      security: []
+    put:
+      summary: 'Update Vehicle'
+      operationId: updateVehicle
+      description: 'update a vehicle'
+      parameters: []
+      responses: {  }
+      tags:
+        - Vehicles
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                plate_number:
+                  type: string
+                  description: ''
+                  example: maiores
+              required:
+                - plate_number
+      security: []
+    delete:
+      summary: 'Delete Vehicle'
+      operationId: deleteVehicle
+      description: 'delete a vehicle'
+      parameters: []
+      responses: {  }
+      tags:
+        - Vehicles
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the vehicle.'
+        example: 3
+        required: true
+        schema:
+          type: integer
+  /api/v1/zones:
+    get:
+      summary: 'Get Zones'
+      operationId: getZones
+      description: 'List all the zones'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Zones
+      security: []
+    post:
+      summary: 'Create Zone'
+      operationId: createZone
+      description: 'Create a zone'
+      parameters: []
+      responses: {  }
+      tags:
+        - Zones
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: eqddksajchthntpimnm
+                price_per_hour:
+                  type: integer
+                  description: 'Must not be greater than 1000.'
+                  example: 21
+                image:
+                  type: string
+                  format: binary
+                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+              required:
+                - name
+                - price_per_hour
+      security: []
+  '/api/v1/zones/{id}':
+    get:
+      summary: 'Show Zone'
+      operationId: showZone
+      description: 'show a zone'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Zones
+      security: []
+    put:
+      summary: 'Update Zone'
+      operationId: updateZone
+      description: 'update a zone'
+      parameters: []
+      responses: {  }
+      tags:
+        - Zones
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: xfcbxirrrxnzqvlbhj
+                price_per_hour:
+                  type: integer
+                  description: 'Must not be greater than 1000.'
+                  example: 15
+      security: []
+    delete:
+      summary: 'Delete Zone'
+      operationId: deleteZone
+      description: 'delete a zone'
+      parameters: []
+      responses: {  }
+      tags:
+        - Zones
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the zone.'
+        example: 2
+        required: true
+        schema:
+          type: integer
 tags:
+  -
+    name: Authentication
+    description: "\nManaging authentication"
   -
     name: Endpoints
     description: ''
+  -
+    name: Parking
+    description: "\nManaging parking"
+  -
+    name: 'User Profile'
+    description: "\nManging user profile"
+  -
+    name: Vehicles
+    description: "\nManaging Vehicles"
+  -
+    name: Zones
+    description: "\nManaging Zones"
 components:
   securitySchemes:
     default:

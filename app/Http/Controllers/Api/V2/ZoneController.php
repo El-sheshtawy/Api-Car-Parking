@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1;
+namespace App\Http\Controllers\Api\V2;
 
 use App\Actions\StoreZoneAction;
 use App\Actions\UpdateZoneAction;
@@ -27,10 +27,10 @@ class ZoneController extends Controller
      */
     public function index()
     {
-        if (! auth()->user()->tokenCan('zones-list')) {
-            abort(403, 'Unauthorized');
-        }
-        return ZoneResource::collection(Zone::select(['id', 'name', 'price_per_hour'])->paginate(1));
+//        if (! auth()->user()->tokenCan('zones-list')) {
+//            abort(403, 'Unauthorized');
+//        }
+        return ZoneResource::collection(Zone::select(['id', 'name', 'price_per_hour'])->get());
     }
 
     /**

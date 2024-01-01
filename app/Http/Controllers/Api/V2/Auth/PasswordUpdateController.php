@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Auth;
+namespace App\Http\Controllers\Api\V2\Auth;
 
 use App\Actions\UpdateProfilePasswordAction;
 use App\Http\Controllers\Controller;

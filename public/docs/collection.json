@@ -10,65 +10,17 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "88f7d76a-e013-47be-bdae-88c50a77aa29",
+        "_postman_id": "e525429f-4551-43d0-b864-657032426836",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
         {
-            "name": "Endpoints",
-            "description": "",
+            "name": "Authentication",
+            "description": "\nManaging authentication",
             "item": [
                 {
-                    "name": "GET api\/v1\/user",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/user",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/user"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "POST api\/v1\/auth\/register",
+                    "name": "Register",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -89,9 +41,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"uek\",\"email\":\"vyost@example.net\",\"password\":\"aliquam\"}"
+                            "raw": "{\"name\":\"cufwydldpymzmjec\",\"email\":\"aliza47@example.net\",\"password\":\"nostrum\"}"
                         },
-                        "description": "",
+                        "description": "User registration",
                         "auth": {
                             "type": "noauth"
                         }
@@ -99,7 +51,7 @@
                     "response": []
                 },
                 {
-                    "name": "POST api\/v1\/auth\/login",
+                    "name": "Login",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -120,9 +72,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"kyle11@example.net\",\"password\":\"aliquid\"}"
+                            "raw": "{\"email\":\"qbins@example.org\",\"password\":\"non\"}"
                         },
-                        "description": "",
+                        "description": "User logging in",
                         "auth": {
                             "type": "noauth"
                         }
@@ -130,117 +82,7 @@
                     "response": []
                 },
                 {
-                    "name": "GET api\/v1\/profile",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/profile",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/profile"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "PATCH api\/v1\/profile",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/profile",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/profile"
-                        },
-                        "method": "PATCH",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"zivnapjhcldnvhufznrkcj\",\"email\":\"shea41@example.net\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "PUT api\/v1\/password",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/password",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/password"
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"current_password\":\"temporibus\",\"password\":\"aut\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "POST api\/v1\/auth\/logout",
+                    "name": "Logout",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -260,21 +102,27 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
+                        "description": "User logging out",
                         "auth": {
                             "type": "noauth"
                         }
                     },
                     "response": []
-                },
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
                 {
-                    "name": "GET api\/v1\/vehicles",
+                    "name": "Get User",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/vehicles",
+                            "path": "api\/v1\/user",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/vehicles"
+                            "raw": "{{baseUrl}}\/api\/v1\/user"
                         },
                         "method": "GET",
                         "header": [
@@ -288,7 +136,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
+                        "description": "get a user",
                         "auth": {
                             "type": "noauth"
                         }
@@ -314,171 +162,15 @@
                             "name": ""
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "name": "Parking",
+            "description": "\nManaging parking",
+            "item": [
                 {
-                    "name": "POST api\/v1\/vehicles",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/vehicles",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/vehicles"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"plate_number\":\"aliquam\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "GET api\/v1\/vehicles\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/vehicles\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/vehicles\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "15",
-                                    "description": "The ID of the vehicle."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "PUT api\/v1\/vehicles\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/vehicles\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/vehicles\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "14",
-                                    "description": "The ID of the vehicle."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"plate_number\":\"velit\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "DELETE api\/v1\/vehicles\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/vehicles\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/vehicles\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "15",
-                                    "description": "The ID of the vehicle."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "POST api\/v1\/parkings\/start",
+                    "name": "Start parking",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -501,7 +193,7 @@
                             "mode": "raw",
                             "raw": "{\"vehicle_id\":15,\"zone_id\":20}"
                         },
-                        "description": "",
+                        "description": "start the parking",
                         "auth": {
                             "type": "noauth"
                         }
@@ -509,7 +201,7 @@
                     "response": []
                 },
                 {
-                    "name": "GET api\/v1\/parkings\/{parking_id}",
+                    "name": "Show parking",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -520,7 +212,7 @@
                                 {
                                     "id": "parking_id",
                                     "key": "parking_id",
-                                    "value": "10",
+                                    "value": "5",
                                     "description": "The ID of the parking."
                                 }
                             ]
@@ -537,7 +229,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
+                        "description": "show the parking details",
                         "auth": {
                             "type": "noauth"
                         }
@@ -565,7 +257,7 @@
                     ]
                 },
                 {
-                    "name": "PUT api\/v1\/parkings\/{parking_id}",
+                    "name": "Stop parking",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -576,7 +268,7 @@
                                 {
                                     "id": "parking_id",
                                     "key": "parking_id",
-                                    "value": "8",
+                                    "value": "6",
                                     "description": "The ID of the parking."
                                 }
                             ]
@@ -593,7 +285,92 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
+                        "description": "stop the parking",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "User Profile",
+            "description": "\nManging user profile",
+            "item": [
+                {
+                    "name": "Show User Profile",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/profile"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "show the user profile information",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update User Profile",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/profile"
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"wadkdopvhcz\",\"email\":\"verla79@example.org\"}"
+                        },
+                        "description": "update the user profile information",
                         "auth": {
                             "type": "noauth"
                         }
@@ -601,7 +378,260 @@
                     "response": []
                 },
                 {
-                    "name": "GET api\/v1\/zones",
+                    "name": "Update password",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/password"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"current_password\":\"voluptatem\",\"password\":\"eum\"}"
+                        },
+                        "description": "update the user password",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Vehicles",
+            "description": "\nManaging Vehicles",
+            "item": [
+                {
+                    "name": "Get Vehicles",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/vehicles",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/vehicles"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "List all the vehicles",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create Vehicle",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/vehicles",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/vehicles"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"plate_number\":\"facilis\"}"
+                        },
+                        "description": "Create a vehicle",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Show Vehicle",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/vehicles\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/vehicles\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "3",
+                                    "description": "The ID of the vehicle."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "show a vehicle",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Vehicle",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/vehicles\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/vehicles\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "7",
+                                    "description": "The ID of the vehicle."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"plate_number\":\"maiores\"}"
+                        },
+                        "description": "update a vehicle",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Vehicle",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/vehicles\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/vehicles\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "6",
+                                    "description": "The ID of the vehicle."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "delete a vehicle",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Zones",
+            "description": "\nManaging Zones",
+            "item": [
+                {
+                    "name": "Get Zones",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -621,7 +651,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
+                        "description": "List all the zones",
                         "auth": {
                             "type": "noauth"
                         }
@@ -638,23 +668,195 @@
                                     "value": "application\/json"
                                 },
                                 {
-                                    "key": "x-ratelimit-limit",
-                                    "value": "60"
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create Zone",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/zones",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/zones"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "name",
+                                    "value": "eqddksajchthntpimnm",
+                                    "type": "text",
+                                    "description": "Must not be greater than 255 characters."
                                 },
                                 {
-                                    "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "key": "price_per_hour",
+                                    "value": 21,
+                                    "type": "text",
+                                    "description": "Must not be greater than 1000."
+                                },
+                                {
+                                    "key": "image",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": "Create a zone",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Show Zone",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/zones\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/zones\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "2",
+                                    "description": "The ID of the zone."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "show a zone",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
                                 },
                                 {
                                     "key": "vary",
                                     "value": "Origin"
                                 }
                             ],
-                            "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"Green Zone\",\"price_per_hour\":100},{\"id\":2,\"name\":\"Yellow Zone\",\"price_per_hour\":200},{\"id\":3,\"name\":\"Red Zone\",\"price_per_hour\":300}]}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "Update Zone",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/zones\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/zones\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "2",
+                                    "description": "The ID of the zone."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"xfcbxirrrxnzqvlbhj\",\"price_per_hour\":15}"
+                        },
+                        "description": "update a zone",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Zone",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/zones\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/zones\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "2",
+                                    "description": "The ID of the zone."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "delete a zone",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 }
             ]
         }
